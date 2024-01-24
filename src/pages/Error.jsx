@@ -1,9 +1,5 @@
-import { useRouteError } from "react-router-dom";
 
 const Error = () => {
-
-    const error = useRouteError();
-
     return (
         <div className="w-full h-screen grid place-items-center bg-neutral-800">
             <div className="text-center">
@@ -11,7 +7,7 @@ const Error = () => {
                 Oops!
                 </h1>
                 <p className="text-white text-lg my-5 max-sm:text-center max-sm:px-5"> Sorry, an unexpected error has occurred.</p>
-                <p className="text-white"><i>{error.statusText || error.message}</i></p>
+                <p className="text-white text-xl">Please Try Again!</p>
             </div>
         </div>
     );
