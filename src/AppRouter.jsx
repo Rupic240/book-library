@@ -8,10 +8,10 @@ import Books from "./pages/Books"
 import Error from "./pages/Error"
 import Details from "./pages/Details"
 
+const APIKey = "AIzaSyDq4ZmgkQrb7kHcLnA75li - X_bElMnAju8";
 
 const AppRouter = () => {
   
-  const APIKey = "AIzaSyDq4ZmgkQrb7kHcLnA75li - X_bElMnAju8";
   const [bookData, setBookData] = useState([]);
   const [popular, setPopular] = useState([]);
   const [details, setDetails] = useState([]);
@@ -22,9 +22,6 @@ const AppRouter = () => {
     
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}&keyes&key=${APIKey}`)
       .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
         return res.json();
       }).then(data => {
         setBookData(data.items);
@@ -37,9 +34,6 @@ const AppRouter = () => {
     const popularBooks = () => {
       fetch(`https://www.googleapis.com/books/v1/volumes?q=programming&keyes&key=${APIKey}&maxResults=40`)
       .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
         return res.json();
       }).then(data => {
         setPopular(data.items);
@@ -54,9 +48,6 @@ const AppRouter = () => {
   const showDetails = (bookId) => {
     fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}?keyes&key=${APIKey}`)
     .then(res => {
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
       return res.json();
     }).then(data => {
       setDetails(data.volumeInfo);

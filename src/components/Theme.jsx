@@ -1,4 +1,3 @@
-import { CssBaseline } from "@mui/material";
 import { createContext, useState } from "react"
 import AppRouter from '../AppRouter';
 
@@ -10,7 +9,6 @@ const Theme = () => {
 
     return (
         <ThemeContext.Provider value={{ mode, setMode }}>
-            <CssBaseline />
             <AppRouter />
         </ThemeContext.Provider>
     )

@@ -9,11 +9,11 @@ const Search = ({ searchBooks }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="relative w-full h-[25rem] grid place-items-center">
+        <div className="relative w-full h-[35rem] grid place-content-center overflow-hidden">
             <img
                 src={HomeBG}
                 alt="background"
-                className="absolute w-full h-screen object-cover"
+                className="absolute w-full h-full object-cover"
             />
             <div className="grid place-items-center gap-10 z-10">
                 <img src={Logo} alt="logo" className="w-[350px] h-20 max-[430px]:w-[280px] max-[430px]:h-16" />

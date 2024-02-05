@@ -8,7 +8,7 @@ const Books = ({ books, searchBooks, showDetails }) => {
   return (
     <>
       <Search searchBooks={searchBooks} />
-      <div className="bg-neutral-800 px-[8%] pb-[8%]">
+      <div className="bg-neutral-800 px-[8%] pb-[5%] mt-[-6%]">
         {
           books.map((items, index) => {
             const img = items.volumeInfo.imageLinks && items.volumeInfo.imageLinks.smallThumbnail;
@@ -30,7 +30,7 @@ const Books = ({ books, searchBooks, showDetails }) => {
                   <img
                     src={img}
                     alt="Book Cover"
-                    className="rounded-md w-40 h-48 cursor-pointer duration-500 hover:scale-105 object-cover object-center max-[430px]:m-auto"
+                    className="rounded-md w-40 h-48 cursor-pointer duration-500 hover:scale-105 object-fill max-[430px]:m-auto"
                     onClick={() => {
                       showDetails(items.id);
                       navigate(`/details/${items.id}`)
@@ -54,14 +54,14 @@ const Books = ({ books, searchBooks, showDetails }) => {
                       }}>
                       Preview
                     </button>
-        
+
                   </div>
                 </div>
               );
             } else {
               return null;
             }
-            
+
           })
         }
       </div>
